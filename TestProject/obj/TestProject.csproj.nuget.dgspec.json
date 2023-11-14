@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kartof\\source\\repos\\TestProject\\TestProject\\TestProject.csproj": {}
+    "C:\\Users\\Kartof\\source\\repos\\TestProject\\MiniGameTest\\TestProject\\TestProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kartof\\source\\repos\\TestProject\\TestProject\\TestProject.csproj": {
+    "C:\\Users\\Kartof\\source\\repos\\TestProject\\MiniGameTest\\TestProject\\TestProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\source\\repos\\TestProject\\TestProject\\TestProject.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\source\\repos\\TestProject\\MiniGameTest\\TestProject\\TestProject.csproj",
         "projectName": "TestProject",
-        "projectPath": "C:\\Users\\Kartof\\source\\repos\\TestProject\\TestProject\\TestProject.csproj",
+        "projectPath": "C:\\Users\\Kartof\\source\\repos\\TestProject\\MiniGameTest\\TestProject\\TestProject.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\source\\repos\\TestProject\\TestProject\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\source\\repos\\TestProject\\MiniGameTest\\TestProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kartof\\AppData\\Roaming\\NuGet\\NuGet.Config",

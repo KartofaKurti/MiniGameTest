@@ -13,9 +13,6 @@ int levelCounter = 1;
 Inputer input = new Inputer();
 RandomEnemyGenerator enemyGenerator = new RandomEnemyGenerator();
 Enemy currentEnemy = enemyGenerator.GenerateRandomEnemy();
-IAttack attackOne = new CharacterAttackOne();
-IAttack attackTwo = new CharacterAttackTwo();
-IAttack attackThree = new CharacterAttackThree();
 PlayerStats playerStats = new PlayerStats();
 Shop shop = new Shop();
 
@@ -35,20 +32,26 @@ while (true)
         Console.WriteLine($"You are facing {currentEnemy.Name}!");
         show++;
     }
+    IAttack attack = null;
     var move = input.PlayerInput()
         .ToLower();
+
+
     switch (move)
     {
         case "1":
-           newCharacter.Attack = attackOne;
-           newCharacter.GoAttack(newCharacter, currentEnemy);
+            attack = new CharacterAttackOne();
+            newCharacter.Attack = attack;
+            newCharacter.GoAttack(newCharacter, currentEnemy);
             break;
         case "2":
-            newCharacter.Attack = attackTwo;
+            attack = new CharacterAttackTwo();
+            newCharacter.Attack = attack;
             newCharacter.GoAttack(newCharacter, currentEnemy);
             break;
         case "3":
-            newCharacter.Attack = attackThree;
+            attack = new CharacterAttackThree();
+            newCharacter.Attack = attack;
             newCharacter.GoAttack(newCharacter, currentEnemy);
             break;
         case "shop":
@@ -111,7 +114,7 @@ while (true)
 
     if (currentEnemy.Health <= 0)
     {
-        currentEnemy.EnemyGoldCalculator.CalculateGold(newCharacter,currentEnemy);
+        currentEnemy.EnemyGoldCalculator.CalculateGold(newCharacter, currentEnemy);
         currentEnemy.Die(currentEnemy);
         Console.WriteLine($"Total gold: {newCharacter.Gold}");
         levelCounter++;
