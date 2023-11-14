@@ -1,0 +1,5 @@
+C:\Users\Kartof\source\repos\TestProject\Workingg\obj\Debug\net6.0\Workingg.csproj.AssemblyReference.cache
+C:\Users\Kartof\source\repos\TestProject\Workingg\obj\Debug\net6.0\Workingg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kartof\source\repos\TestProject\Workingg\obj\Debug\net6.0\Workingg.AssemblyInfoInputs.cache
+C:\Users\Kartof\source\repos\TestProject\Workingg\obj\Debug\net6.0\Workingg.AssemblyInfo.cs
+C:\Users\Kartof\source\repos\TestProject\Workingg\obj\Debug\net6.0\Workingg.csproj.CoreCompileInputs.cache
