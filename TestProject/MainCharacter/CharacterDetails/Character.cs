@@ -20,6 +20,15 @@ namespace TestProject
     {
         public string Name { get; private set; }
 
+
+        private int _Xp;
+        public int Level { get; private set; }
+        public int Xp
+        {
+            get { return _Xp; }
+            set { _Xp = value; }
+        }
+
         public decimal MaxCharacterHp = 100;
         private decimal _Health;
         public decimal Health
@@ -39,8 +48,7 @@ namespace TestProject
         public Inventory Inventory { get; private set; }
 
         public decimal Gold { get; set; }
-        public int Level { get; private set; }
-        
+
         public IGoldDeductor CharacterDeductGold;
         public IHeal CharacterHeal;
         public IDamagetaker CharacterDamageTaker;
