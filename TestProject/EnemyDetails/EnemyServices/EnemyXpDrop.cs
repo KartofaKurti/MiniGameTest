@@ -11,7 +11,8 @@ namespace TestProject.EnemyDetails.EnemyServices
     {
         public void GiveXp(Character character, Enemy enemy)
         {
-            throw new NotImplementedException();
+            int xp = GetXpReward(enemy);
+            character.Xp += xp;
         }
         private int GetXpReward(Enemy enemy)
         {

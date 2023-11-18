@@ -8,6 +8,6 @@ namespace TestProject.Enemies.EnemyModels
 {
     public interface ILevelUpper
     {
-        public void LevelUp(Enemy enemy);
+        public void LevelUp(Enemy data);
     }
 }

@@ -12,3 +12,17 @@ C:\Users\Kartof\source\repos\TestProject\TestProject\obj\Debug\net6.0\refint\Tes
 C:\Users\Kartof\source\repos\TestProject\TestProject\obj\Debug\net6.0\TestProject.pdb
 C:\Users\Kartof\source\repos\TestProject\TestProject\obj\Debug\net6.0\TestProject.genruntimeconfig.cache
 C:\Users\Kartof\source\repos\TestProject\TestProject\obj\Debug\net6.0\ref\TestProject.dll
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\bin\Debug\net6.0\TestProject.exe
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\bin\Debug\net6.0\TestProject.deps.json
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\bin\Debug\net6.0\TestProject.runtimeconfig.json
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\bin\Debug\net6.0\TestProject.dll
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\bin\Debug\net6.0\TestProject.pdb
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.AssemblyInfoInputs.cache
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.AssemblyInfo.cs
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.csproj.CoreCompileInputs.cache
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.dll
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\refint\TestProject.dll
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.pdb
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\TestProject.genruntimeconfig.cache
+C:\Users\Kartof\source\repos\TestProject\MiniGameTest\TestProject\obj\Debug\net6.0\ref\TestProject.dll

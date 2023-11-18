@@ -103,6 +103,9 @@ while (true)
         case "/kill":
             currentEnemy.Kill(currentEnemy);
             break;
+        case "/xp":
+            newCharacter.Xp += 100;
+            break;
         case "emote":
             newCharacter.Emote();
             break;
@@ -116,6 +119,8 @@ while (true)
     {
         currentEnemy.EnemyGoldCalculator.CalculateGold(newCharacter, currentEnemy);
         currentEnemy.Die(currentEnemy);
+        currentEnemy.EnemyXpDrop.GiveXp(newCharacter,currentEnemy);
+        newCharacter.LevelUp.CheckXp(newCharacter);
         Console.WriteLine($"Total gold: {newCharacter.Gold}");
         levelCounter++;
         currentEnemy = enemyGenerator.GenerateRandomEnemy();

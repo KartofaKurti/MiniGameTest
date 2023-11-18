@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestProject.Enemies;
 using TestProject.MainCharacter.CharacterServices;
+using TestProject.MainCharacter.CharacterServices.LeverServices;
 using TestProject.MainCharacter.InventoryDetails;
 using TestProject.MainCharacter.InventoryDetails.InventoryServices;
 using TestProject.MainCharacter.InventoryDetails.Models;
@@ -22,7 +23,7 @@ namespace TestProject
 
 
         private int _Xp;
-        public int Level { get; private set; }
+        public int Level { get; set; }
         public int Xp
         {
             get { return _Xp; }
@@ -34,7 +35,10 @@ namespace TestProject
         public decimal Health
         {
             get { return _Health; }
-            set { _Health = value; }
+            set
+            {
+                _Health = Math.Min(value, MaxCharacterHp);
+            }
         }
 
 
@@ -55,6 +59,9 @@ namespace TestProject
         public IItemsDisplayer Items;
         public IItemUser UseItem { get; set; }
         public IAttack Attack { get; set; }
+        public LevelUpper LevelUp { get;private set; }
+
+        public CharacterLevelUpReward Rewards { get; private set; }
         
         public Character(string name)
         {
@@ -68,6 +75,7 @@ namespace TestProject
             CharacterHeal = new CharacterHeal();
             CharacterDamageTaker = new CharacterDamageTaker();
             Items = new ItemsDisplayer();
+            LevelUp = new LevelUpper();
         }
 
         public void GoAttack(Character character, Enemy enemy)
