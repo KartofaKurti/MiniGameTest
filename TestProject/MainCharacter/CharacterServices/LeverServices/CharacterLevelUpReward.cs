@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestProject.StartUp.Engine;
 
-namespace TestProject
+namespace TestProject.MainCharacter.CharacterServices.LeverServices
 {
     public class CharacterLevelUpReward
     {

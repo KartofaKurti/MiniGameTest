@@ -15,20 +15,22 @@ namespace TestProject
 
         public void ApplyBleed(Character character, Enemy enemy)
         {
-            var dmgBleed = OnBleedDmg(enemy);
-            try
             {
+                var dmgBleed = OnBleedDmg(enemy);
+
                 var bleedRate = 2.5m;
                 while (dmgBleed > 0)
                 {
                     character.Health -= bleedRate - 0.1m;
+                    bleedRate -= 0.1m;
+                    dmgBleed -= bleedRate;
+                    Console.WriteLine(bleedRate);
                     Thread.Sleep(1000);
                 }
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                Console.WriteLine(ex.Message);
-                dmgBleed = 0;
+                if (dmgBleed < 0)
+                {
+                    character.Health += Math.Abs(dmgBleed);
+                }
             }
         }
 

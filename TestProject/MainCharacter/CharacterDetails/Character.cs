@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,39 +20,72 @@ namespace TestProject
 {
     public class Character : ICharacterDeath
     {
-        public string Name { get; private set; }
-
-
-        private int _Xp;
-        public int Level { get; set; }
-        public int Xp
+        private string name;
+        public string Name
         {
-            get { return _Xp; }
-            set { _Xp = value; }
-        }
-
-        public decimal MaxCharacterHp = 100;
-        private decimal _Health;
-        public decimal Health
-        {
-            get { return _Health; }
-            set
+            get => name;
+            private set
             {
-                _Health = Math.Min(value, MaxCharacterHp);
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Name must not be null.");
+                }
+                name = value;
             }
         }
 
+        private decimal maxCharacterHp;
+        public decimal MaxCharacterHp
+        {
+            get { return maxCharacterHp; }
+            set => maxCharacterHp = value;
+        }
 
-        private decimal _Damage;
+        private decimal health;
+        public decimal Health
+        {
+            get { return health; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new IndexOutOfRangeException("Health must be positive number.");
+                }
+                health = value;
+            }
+        }
+
+        private int xp;
+        public int Xp
+        {
+            get { return xp; }
+            set { xp = value; }
+        }
+
+        public int Level { get; set; }
+
+        private decimal damage;
         public decimal Damage
         {
-            get { return _Damage; }
-            set { _Damage = value; }
+            get { return damage; }
+            set { damage = value; }
+        }
+
+        private decimal gold;
+        public decimal Gold
+        {
+            get => gold;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new IndexOutOfRangeException("Gold must be positive number or 0.");
+                }
+                gold = value;
+            }
         }
 
         public Inventory Inventory { get; private set; }
-
-        public decimal Gold { get; set; }
 
         public IGoldDeductor CharacterDeductGold;
         public IHeal CharacterHeal;
@@ -59,10 +93,10 @@ namespace TestProject
         public IItemsDisplayer Items;
         public IItemUser UseItem { get; set; }
         public IAttack Attack { get; set; }
-        public LevelUpper LevelUp { get;private set; }
+        public LevelUpper LevelUp { get; private set; }
 
         public CharacterLevelUpReward Rewards { get; private set; }
-        
+
         public Character(string name)
         {
             this.Name = name;
@@ -76,6 +110,7 @@ namespace TestProject
             CharacterDamageTaker = new CharacterDamageTaker();
             Items = new ItemsDisplayer();
             LevelUp = new LevelUpper();
+            MaxCharacterHp = 100;
         }
 
         public void GoAttack(Character character, Enemy enemy)
@@ -93,7 +128,7 @@ namespace TestProject
 
         public void KillYourSelf()
         {
-            _Health = 0;
+            health = 0;
         }
 
         public void Emote()
@@ -103,6 +138,7 @@ namespace TestProject
 
         public void PlayerDeath(Character character)
         {
+
             Console.WriteLine("You died trash!");
         }
     }

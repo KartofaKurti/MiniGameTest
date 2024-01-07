@@ -37,7 +37,7 @@ namespace TestProject.Shop
             }
             else
             {
-                Console.WriteLine($"Item {name} not available in the shop.");
+                throw new ArgumentException($"Item {name} not available in the shop.");
             }
         }
         public void DisplayItems()

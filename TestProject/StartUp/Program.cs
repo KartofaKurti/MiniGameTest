@@ -1,6 +1,7 @@
 ﻿using TestProject;
 using System;
 using TestProject.Enemies;
+using TestProject.Enemies.Services;
 using TestProject.MainCharacter.CharacterServices;
 using TestProject.MainCharacter.CharacterServices.Attacker.Attacks;
 using TestProject.Models;
@@ -35,7 +36,10 @@ while (true)
     IAttack attack = null;
     var move = input.PlayerInput()
         .ToLower();
-
+    if (levelCounter == 10)
+    {
+        BossFight(newCharacter);
+    }
 
     switch (move)
     {
@@ -119,7 +123,7 @@ while (true)
     {
         currentEnemy.EnemyGoldCalculator.CalculateGold(newCharacter, currentEnemy);
         currentEnemy.Die(currentEnemy);
-        currentEnemy.EnemyXpDrop.GiveXp(newCharacter,currentEnemy);
+        currentEnemy.EnemyXpDrop.GiveXp(newCharacter, currentEnemy);
         newCharacter.LevelUp.CheckXp(newCharacter);
         Console.WriteLine($"Total gold: {newCharacter.Gold}");
         levelCounter++;
@@ -128,6 +132,8 @@ while (true)
         show--;
         currentEnemy.LevelUp(currentEnemy);
     }
+
+    EnemyAttack(currentEnemy, newCharacter);
 
     if (newCharacter.IsCharacterDeath(newCharacter))
     {
@@ -138,4 +144,12 @@ while (true)
         break;
     }
 }
+void EnemyAttack(Enemy enemy, Character character)
+{
+    character.Health -= enemy.Damage;
+}
 
+void BossFight(Character character)
+{
+    
+}
